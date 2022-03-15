@@ -1,0 +1,19 @@
+name: GitHub actions event dispatcher
+on:
+  push
+jobs:
+  dispatch:
+    name: Dispatch GitHub actions events.
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Create repository_dispatch event
+      uses: actions/github-script@v6
+      with:
+        script: |
+          await github.rest.actions.createWorkflowDispatch({
+            owner: 'ibissource',
+            repo: 'frank-runner-test',
+            workflow_id: 'test-frank-runner.yml',
+            ref: 'master'
+          })
