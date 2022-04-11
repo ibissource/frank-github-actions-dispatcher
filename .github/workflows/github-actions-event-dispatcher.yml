@@ -10,6 +10,7 @@ jobs:
     - name: Create repository_dispatch event
       uses: actions/github-script@v6
       with:
+        github-token: ${{ secrets.CI_ACCESSTOKEN }}
         script: |
           await github.rest.actions.createWorkflowDispatch({
             owner: 'ibissource',
