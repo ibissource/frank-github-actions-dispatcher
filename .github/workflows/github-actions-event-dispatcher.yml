@@ -1,6 +1,11 @@
 name: GitHub actions event dispatcher
 on:
-  push
+  push:
+  workflow_dispatch:
+    inputs:
+      source:
+        description: Build event to be dispatched
+        required: false
 jobs:
   dispatch:
     name: Dispatch GitHub actions events.
