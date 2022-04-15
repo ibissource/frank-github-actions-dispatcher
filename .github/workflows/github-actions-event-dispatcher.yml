@@ -21,7 +21,7 @@ jobs:
             owner: 'ibissource',
             repo: 'frank-runner',
             workflow_id: 'test-frank-runner.yml',
-            ref: 'master'
+            ref: 'master',
             inputs: {
               forceLatestFF: true
             }
