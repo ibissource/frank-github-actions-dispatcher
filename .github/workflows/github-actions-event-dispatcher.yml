@@ -22,4 +22,7 @@ jobs:
             repo: 'frank-runner',
             workflow_id: 'test-frank-runner.yml',
             ref: 'master'
+            inputs: {
+              forceLatestFF: true
+            }
           })
