@@ -23,6 +23,6 @@ jobs:
             workflow_id: 'test-frank-runner.yml',
             ref: 'master',
             inputs: {
-              forceLatestFF: true
+              forceLatestFF: 'true'
             }
           })
