@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Create repository_dispatch event
+    - name: Push repository_dispatch event to Frank!Runner
       uses: actions/github-script@v6
       with:
         github-token: ${{ secrets.CI_ACCESSTOKEN }}
@@ -25,4 +25,15 @@ jobs:
             inputs: {
               forceLatestFF: 'true'
             }
+          })
+    - name: Push repository_dispatch event to Frank!Manual
+      uses: actions/github-script@v6
+      with:
+        github-token: ${{ secrets.CI_ACCESSTOKEN }}
+        script: |
+          await github.rest.actions.createWorkflowDispatch({
+            owner: 'ibissource',
+            repo: 'frank-manual',
+            workflow_id: 'test-manual.yml',
+            ref: 'master',
           })
