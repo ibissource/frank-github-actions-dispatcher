@@ -37,6 +37,3 @@ jobs:
             workflow_id: 'test-manual.yml',
             ref: 'master',
           })
-
-
-test-manual.yml
